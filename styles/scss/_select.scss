@@ -1,0 +1,80 @@
+.css-162g8z5 {
+    height: 38px;
+    background-color: #E9ECEF!important;
+    border: 1px solid #ced4da!important;
+
+    .css-ln5n5c {
+        display: none;
+    }
+}
+
+.css-10nd86i {
+    &.is-invalid {
+        @extend .form-control;
+
+        padding: 0;
+        background: none;
+        border: 0;
+
+        //container normal
+        //container focus
+        .css-2o5izw,
+        .css-vj8t7z {
+            border-color: #dc3545!important;
+        }
+    }
+
+    //input
+    .css-1g6gooi {
+        height: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .css-xp4uvy {
+        height: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .css-2o5izw {
+        height: 38px;
+        border-radius: $border-radius;
+        border-width: 1px;
+        background-color: #fff;
+        border-color: $info!important;
+        outline: 0;
+        box-shadow: none;
+    }
+    .css-vj8t7z {
+        height: 38px;
+        border-radius: $border-radius;
+        border-color: #ced4da!important;
+    }
+    span.css-d8oujb {
+        display: none
+        // margin-top: 0;
+        // height: 36px;
+    }
+    input:focus {
+        box-shadow: none;
+    }
+    .css-15k3avv {
+        .css-11unzgr {
+            @extend .text-left;
+            > div {
+                background-color: white;
+                color: black;
+            }
+            > div:hover {
+                background-color: #f8f9fa;
+                color: black;
+            }
+            > div:active {
+                background-color: rgb(238, 238, 238);
+                color: black;
+            }
+        }
+        margin-top: 2px;
+    }
+}

@@ -1,0 +1,51 @@
+.profile {
+    @extend .container, .container-spacing;
+
+    margin-top: 100px;
+    margin-bottom: 70px;
+
+    .form-zone {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .form-group {
+        
+            input {
+                @extend .rounded-0;
+    
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+            }
+    
+            .css-vj8t7z,
+            .css-2o5izw {
+                @extend .rounded-0;
+    
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+            }
+        }
+    
+        .continue-btn {
+            @extend
+                .btn,
+                .btn-info,
+                .ml-auto,
+                .d-block,
+                .px-5;
+    
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        margin-top: 150px;
+
+        .continue-btn {
+            width: auto;
+        }
+    }
+}

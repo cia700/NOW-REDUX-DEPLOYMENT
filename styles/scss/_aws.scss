@@ -1,0 +1,64 @@
+.modal-content {
+    @extend .shadow;
+
+    border: 0;
+}
+
+//messages toasts
+.Toast__toast___2YWKB {
+    @extend .rounded-top;
+    
+    box-shadow: none;
+    background-color: $lightgreen;
+    padding: 12px;
+    //position: static;
+}
+
+//main form container
+.Form__formContainer___cu04J {
+    margin: 0 auto;
+
+    a {
+        color: $lightgreen!important;
+
+        &:hover {
+            color: $extralightgreen!important;
+        }
+    }
+
+    //form container
+    .Form__formSection___3tqxz {
+        box-shadow: none;
+        padding: 20px;
+        padding-top: 0;
+
+        //form header
+        .Section__sectionHeader___13iO4 {
+            @include font(20px, bold, $family: Khand);
+
+            color: $lightgreen;
+        }
+
+        //formfield
+        .Form__formField___2DWhT {
+            margin-bottom: 15px;
+            
+            select {
+                border-color: #ced4da;
+                padding-top: 0;
+                padding-bottom: 0;
+                background-position: calc(100% - 21px) calc(1em + 3px),     calc(100% - 15px) calc(1em + 3px),     calc(100% - 2.5em) 0.5em
+            }
+        }
+
+
+        //form footer
+        .Section__sectionFooter___1QlDn {
+            button {
+                @extend .rounded;
+
+                background-color: $lightgreen;
+            }
+        }
+    }
+}

@@ -1,0 +1,213 @@
+// * {
+//     outline: 1px solid red;
+// }
+
+html {
+    &.wf-loading,
+    &.wf-inactive {
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+    body {
+        @include font(14px, $family: Lato);
+        color: #3b3b3b;
+    }
+}
+
+a,
+button,
+input,
+select,
+textarea {
+    &:focus,
+    &:active {
+        outline: 0;
+    }
+}
+
+input:not([type="checkbox"]),
+select {
+    @extend .form-control;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: $extralightgreen;
+    &:hover {
+        color: $green;
+        text-decoration: none;
+    }
+}
+
+.container-fluid {
+    max-width: 1700px;
+
+    @include media-breakpoint-up(sm) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.container-spacing {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    @include media-breakpoint-up(md) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+}
+
+.title {
+    @extend .w-100, .border-bottom;
+
+    display: flex;
+    margin-bottom: 24px;
+    span {
+        @include font(22px);
+        border-bottom: 3px solid red;
+        color: $green;
+        font-family: Khand;
+        margin-bottom: -1px;
+    }
+}
+
+.numbered-control {
+    @extend .rounded, .border;
+    @include flex();
+    display: flex !important;
+    background-color: white;
+    //font-family: Khand;
+    p {
+        @extend .text-center, .text-muted;
+        border-right: 1px solid silver;
+        height: 20px;
+        width: 27px;
+        font-size: 14px;
+    }
+    select,
+    input {
+        @extend .border-0;
+        border-radius: 0 4px 4px 0;
+        font-size: 14px;
+    }
+
+    .css-10nd86i {
+        font-size: 14px;
+        width: 100%;
+
+        .css-2o5izw {
+            @extend .rounded-right;
+
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border: 0;
+            box-shadow: none;
+        }
+        .css-vj8t7z {
+            border: 0;
+        }
+        span.css-d8oujb {
+            margin-top: 0;
+            height: 38px;
+        }
+    }
+
+    &.is-invalid {
+        @extend .form-control;
+        border: 1px solid red !important;
+        height: auto;
+        padding: 0;
+
+        .searchbar & {
+            border-color: red !important;
+        }
+
+        p {
+            color: red !important;
+        }
+    }
+
+    ~ .invalid-feedback {
+        color: red;
+    }
+}
+
+.btn-go {
+    @extend .btn, .btn-block, .btn-info;
+    @include font(16px, bold, $family: Lato);
+
+    background-color: $lightgreen;
+    height: 40px;
+
+    &::after {
+        @include font(20px, normal);
+        content: "»";
+        font-style: normal;
+        line-height: 0;
+        margin-left: 10px;
+    }
+}
+
+.link {
+    @extend .text-capitalize;
+    @include font(18px);
+    font-family: Khand;
+}
+
+.list-columns {
+    -moz-column-width: 150px;
+    -webkit-column-width: 150px;
+    column-width: 150px;
+    width: 100%;
+}
+
+.icon-link {
+    @extend .icon;
+
+    @include font(22px);
+
+    color: #757575;
+    cursor: pointer;
+
+    &:hover {
+        color: #333;
+    }
+
+    &:active {
+        color: #757575;
+    }
+}
+
+#__next {
+    @include flex(column);
+
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.table th,
+.table td {
+    border-top: 0px solid white !important;
+}

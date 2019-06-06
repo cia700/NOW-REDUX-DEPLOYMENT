@@ -1,0 +1,89 @@
+.content-placeholder div {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderSkeleton;
+  -webkit-animation-timing-function: linear;
+  background: #f6f7f8;
+  background-image: -webkit-gradient(
+    linear,
+    left center,
+    right center,
+    from(#f6f7f8),
+    color-stop(0.2, #edeef1),
+    color-stop(0.4, #f6f7f8),
+    to(#f6f7f8)
+  );
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+}
+
+div.cp-circle-sm {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+}
+
+div.cp-circle-md {
+  height: 105px;
+  width: 105px;
+  border-radius: 105px;
+}
+
+div.cp-w-xs {
+  width: 25px;
+}
+
+div.cp-w-sm {
+  width: 38%;
+}
+
+div.cp-w-6 {
+  width: 45%;
+}
+
+div.cp-w-md {
+  width: 80%;
+}
+
+div.cp-w-lg {
+  width: 100%;
+}
+
+div.cp-h-sm {
+  height: 15px;
+}
+
+div.cp-h-md {
+  height: 20px;
+}
+
+div.cp-h-lg {
+  height: 45px;
+}
+
+div.card-product div.content-placeholder div.cp-circle-md {
+  transform: translateX(62%);
+  margin-bottom: 60%;
+  margin-top: 29%;
+}
+
+@-webkit-keyframes placeholderSkeleton {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+div.cp-h-xl {
+  height: 100px;
+}

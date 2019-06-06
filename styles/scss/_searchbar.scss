@@ -1,0 +1,101 @@
+.searchbar {
+    background-color: #044142;
+
+    > div {
+        @extend .container-fluid;
+    }
+
+    form {
+        @extend .mx-auto;
+
+        padding: 113px 0 35px;
+
+        > p {
+            @extend .text-uppercase, .text-center;
+
+            @include font(17px);
+
+            color: white;
+            font-family: Khand;
+            line-height: 18px;
+            margin-bottom: 20px;
+            width: 64px;
+            margin-left: auto;
+            margin-right: auto;
+
+            span {
+                @include font(24px);
+                display: block;
+                margin-top: 5px;
+            }
+        }
+
+        .control-container {
+            width: 100%;
+            margin-top: 12px;
+
+            &.control-button {
+                margin-top: 30px;
+            }
+        }
+
+        .numbered-control {
+            border-color: white !important;
+        }
+    }
+
+    button {
+        @extend .btn-go;
+    }
+
+    @include media-breakpoint-up(md) {
+        form {
+            padding: 130px 0 35px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        form {
+            @include flex($horizontal: space-between);
+
+            padding: 15px 0;
+            max-width: 589px;
+
+            > p {
+                margin-bottom: 0;
+                margin-right: 15px;
+            }
+
+            .controls-wrapper {
+                @include flex(
+                    $horizontal: space-between,
+                    $vertical: flex-start,
+                    $wrap: true
+                );
+
+                //flex-grow: 1;
+                //width: 100%;
+                //margin: -6px;
+                z-index: 1;
+
+                .control-container {
+                    margin: 6px;
+                    //margin-top: 0!important;
+                    max-width: 158px;
+                }
+
+                .input-name {
+                    flex-grow: 1;
+                    max-width: 328px;
+                    //max-width: unset;
+                }
+            }
+
+            // .control-button {
+            //     //margin-top: 0!important;
+            //     //width: auto;
+            //     //margin-left: 15px;
+            // }
+        }
+    }
+}

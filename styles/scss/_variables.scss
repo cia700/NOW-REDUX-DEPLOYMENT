@@ -1,0 +1,31 @@
+$darkgreen: #004141;
+$green: #295d5e;
+$lightgreen: #28adae;
+$extralightgreen: #13c0c2;
+$lightgray: #5e6875;
+$info: #28adae;
+
+$primary: $green;
+
+$popover-max-width: 390px;
+$popover-header-padding-y: 20px;
+$popover-header-padding-x: 20px;
+$popover-body-padding-y: 20px;
+$popover-body-padding-x: 20px;
+
+$pagination-color: inherit;
+$pagination-border-color: white;
+$pagination-hover-bg: white;
+$pagination-hover-border-color: #dee2e6;
+$pagination-hover-color: inherit;
+$pagination-active-bg: white;
+$pagination-active-color: inherit;
+$pagination-active-border-color: $green;
+
+$custom-control-indicator-bg: rgba($darkgreen, .2);
+$custom-control-indicator-active-bg: $lightgreen;
+$custom-control-indicator-checked-bg: $lightgreen;
+$custom-control-indicator-disabled-bg: rgba(black, .2);
+$custom-control-indicator-checked-disabled-bg: rgba(black, .2);
+
+$input-btn-focus-box-shadow: none;

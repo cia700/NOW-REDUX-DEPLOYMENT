@@ -1,0 +1,31 @@
+.breadcrumb {
+    @extend
+        .d-none,
+        .d-md-block,
+        .text-capitalize;
+
+    margin: 0 0 24px 0;
+    padding: 0;
+
+    ol {
+        @include flex($horizontal: flex-start);
+        @include font(16px);
+
+        color: #707070;
+    }
+
+    li:not(:first-child)::before {
+        //@include font(22px);
+        
+        content: " / ";
+        margin: 0 10px;
+    }
+
+    // a {
+    //     color: #006bb4;
+
+    //     &:hover {
+    //         text-decoration: underline;
+    //     }
+    // }
+}

@@ -1,0 +1,251 @@
+.products {
+    @extend .container-fluid, .container-spacing;
+
+    h2 {
+        @extend .title;
+    }
+
+    .breadcrumb {
+        margin-left: 240px;
+    }
+
+    > div {
+        @include flex(true, $vertical: flex-start);
+    }
+
+    aside {
+        width: 100%;
+
+        h3 {
+            @extend .lead, .border-bottom;
+
+            @include flex();
+
+            cursor: pointer;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #295d5e;
+
+            &.collapsed {
+                i::before {
+                    content: "▲";
+                }
+            }
+
+            &:hover {
+                i {
+                    opacity: 0.8;
+                }
+            }
+
+            i {
+                margin-left: auto;
+
+                &::before {
+                    @extend .rounded, .d-inline-block;
+
+                    @include size(25px);
+                    @include flex();
+                    @include font(14px);
+
+                    content: "▼";
+                    padding-top: 1px;
+                    line-height: 22px;
+                    //background-color: $green;
+                    color: $green;
+                    text-align: center;
+                    font-style: normal;
+                }
+            }
+        }
+
+        .filter-container {
+            margin-bottom: 20px;
+
+            label,
+            input {
+                cursor: pointer;
+            }
+        }
+    }
+
+    article {
+        flex-grow: 1;
+        margin-top: 10px;
+
+        .products-pagination {
+            @include flex($horizontal: space-between, $wrap: true);
+
+            // margin-bottom: 20px;
+            margin-top: 30px;
+
+            // padding: 12px;
+
+            // .show-container {
+            //     @include flex();
+
+            //     .css-10nd86i {
+            //         margin-left: 10px;
+            //         width: 107px;
+            //     }
+            // }
+
+            .pagination {
+                li {
+                    cursor: pointer;
+                }
+
+                a {
+                    @extend .rounded, .text-center;
+
+                    @include size(38px);
+
+                    margin-right: 3px;
+                    line-height: 1.4;
+
+                    &:active {
+                        opacity: 0.8;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+                .page-item {
+                    .page-link {
+                        padding: 0.5rem 0.4rem;
+                    }
+                }
+            }
+        }
+
+        .products-list {
+            @include flex($horizontal: flex-start, $wrap: true);
+
+            margin: -20px -10px;
+            width: calc(100% + 20px);
+
+            figure {
+                @extend .border, .rounded;
+
+                @include flex(true);
+                @include size(auto, 100%);
+
+                margin: 20px 10px;
+                padding: 25px 15px;
+                position: relative;
+                //transition: box-shadow .5s ease;
+
+                &:hover {
+                    @extend .shadow;
+                    //box-shadow: 3px 3px 4px 0 rgba(black, .3);
+                }
+            }
+
+            .card-header {
+                @extend .rounded;
+
+                @include flex();
+                @include size(auto, 100%);
+
+                margin-bottom: 20px;
+                overflow: hidden;
+
+                img {
+                    @include size(auto, 100%);
+                }
+            }
+
+            figcaption {
+                @include size(auto, 100%);
+            }
+
+            h3 {
+                @extend .text-capitalize, .d-block;
+
+                @include font(16px, bold);
+
+                color: $info;
+                margin-bottom: 15px;
+
+                @include multiLineEllipsis(20px, 3);
+
+                &:hover {
+                    color: $green;
+                }
+            }
+
+            .card-info {
+                margin-bottom: 15px;
+            }
+
+            .small {
+                opacity: 0.8;
+
+                &.small-plus {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .product-price {
+                @extend .text-danger;
+
+                @include font(15px, 600);
+            }
+
+            .counter {
+                width: 100%;
+            }
+
+            [class^="label-"] {
+                @extend .text-center;
+
+                @include font(14px, 300);
+
+                color: white;
+                position: absolute;
+                right: 0;
+                width: 72px;
+                padding: 5px 0;
+
+                &.label-red {
+                    @extend .bg-danger;
+
+                    top: 41px;
+                }
+
+                &.label-blue {
+                    background-color: #17a2b8;
+                    top: 76px;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        > div {
+            @include flex($horizontal: flex-start, $vertical: flex-start);
+        }
+
+        aside {
+            margin-right: 30px;
+            min-width: 210px;
+            width: 210px;
+        }
+
+        article {
+            margin-top: 28px;
+
+            .products-list {
+                figure {
+                    @include size(456px, 225px);
+                }
+
+                .card-header {
+                    margin-bottom: auto;
+                }
+            }
+        }
+    }
+}

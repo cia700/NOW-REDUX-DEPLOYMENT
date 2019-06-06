@@ -1,0 +1,123 @@
+.arrivals {
+    @extend .container, .container-spacing;
+    > div {
+        @extend .row;
+    }
+    article {
+        @extend .col-lg-12;
+    }
+    .featured {
+        margin-bottom: 25px;
+        h2 {
+            @extend .title;
+        }
+        > div {
+            @extend .row;
+            margin-bottom: -15px;
+            margin-top: -15px;
+        }
+        figure {
+            @extend .col-auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        img {
+            @extend .rounded;
+            margin-bottom: 10px;
+            width: 130px;
+            height: 100px;
+        }
+        figcaption {
+            @extend .text-center;
+            @include flex(true, flex-end);
+            @include font(12px);
+            height: 136px;
+            width: 130px;
+            span {
+                @extend .text-center;
+                @include font(14px);
+                display: block;
+                @include multiLineEllipsis(20px, 3);
+                &:first-of-type {
+                    margin-top: 5px;
+                }
+                &:last-of-type {
+                    @extend .font-weight-bold, .text-uppercase;
+                    margin-bottom: 10px;
+                }
+            }
+            div {
+                @extend .w-100;
+                @include flex($horizontal: space-between);
+                font-family: Khand;
+            }
+            .counter {
+                button {
+                    @extend .btn, .text-white, .text-capitalize, .ml-auto;
+
+                    background-color: $extralightgreen;
+                    width: auto;
+                }
+            }
+        }
+        a {
+            @extend .link;
+        }
+    }
+    .arrivals-set {
+        h2 {
+            @extend .title;
+        }
+        > div {
+            @extend .row;
+            > div {
+                @extend .col-12;
+                margin-bottom: 25px;
+                > div {
+                    @include flex(
+                        $horizontal: space-between,
+                        $vertical: flex-end
+                    );
+                    border-bottom: 1px solid silver;
+                }
+            }
+        }
+        h3 {
+            @include font(16px, bold);
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 12px;
+            margin-right: 12px;
+        }
+        img {
+            @extend .rounded-top;
+            width: 140px;
+            height: 90px;
+        }
+        figcaption {
+            @extend .text-center;
+            @include font(12px);
+            background-color: $lightgreen;
+            color: white;
+            margin-bottom: -1px;
+            padding: 3px 0;
+        }
+        a {
+            @extend .link;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .featured {
+            margin-bottom: 70px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .featured {
+            margin-bottom: 0;
+        }
+        .arrivals-set h2 span {
+            margin-left: auto;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "version": 2,
+    "name": "primeauto",
+    "alias": ["www.myprimecarparts.com", "my-alias-fmontada"],
+    "build": {
+        "env": {
+            "REACT_APP_PAYPAL_CLIENTID_LIVE": "123",
+            "REACT_APP_PAYPAL_CLIENTID_SANDBOX": "123"
+        }
+    },
+    "env": {
+        "REACT_APP_API_URL": "https://ij9evi8l20.execute-api.us-west-1.amazonaws.com/",
+        "REACT_APP_API_GATEWAY_NAME": "prime-backend",
+        "REACT_APP_IMAGE_BASE_URL": "https://s3-us-west-1.amazonaws.com/prime-products-images/",
+        "REACT_APP_STORAGE_KEY": "primeautoparts",
+        "REACT_APP_ALL_CATEGORIES": "primeautoparts",
+        "REACT_APP_PAGE_SIZE": "10"
+    },
+    "builds": [
+        {
+            "src": "next.config.js",
+            "use": "@now/next"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/content/(.+)",
+            "dest": "/content?url=$1",
+            "headers": {
+                "cache-control": "public, max-age=0, must-revalidate"
+            }
+        },
+        {
+            "src": "/(?<make>[^/].*-parts)/(?<model>[^/].*-parts)$",
+            "dest": "/model?make=$make&model=$model",
+            "headers": {
+                "cache-control": "public, max-age=0, must-revalidate"
+            }
+        },
+        {
+            "src": "/(?<make>.*-parts)",
+            "dest": "/make?make=$make",
+            "headers": {
+                "cache-control": "public, max-age=0, must-revalidate"
+            }
+        },
+        {
+            "src": "/p/(?<id>[^/]+)/(?<url>[^/]+)$",
+            "dest": "/detail?id=$id&url=$url",
+            "headers": {
+                "cache-control": "public, max-age=0, must-revalidate"
+            }
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1",
+            "headers": {
+                "cache-control": "public, max-age=0, must-revalidate"
+            }
+        },
+        {
+            "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+            "headers": {
+                "cache-control": "immutable,max-age=31536000"
+            }
+        }
+    ]
+}

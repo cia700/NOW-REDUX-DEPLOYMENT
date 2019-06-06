@@ -1,0 +1,68 @@
+.categories {
+    background-color: whitesmoke;
+    > div {
+        @extend .container;
+        padding-top: 25px;
+        > div:last-child {
+            @extend .row;
+        }
+    }
+    h2 {
+        @extend .title;
+    }
+    article {
+        @extend .col-12, .col-md-auto;
+        margin-bottom: 25px;
+        > a {
+            @extend .btn, .btn-block, .text-white, .text-uppercase;
+            background-color: $extralightgreen;
+            font-family: Khand;
+            padding-right: 25px;
+            span {
+                background-color: $lightgray;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                position: absolute;
+                padding-top: inherit;
+                top: 0;
+                right: 15px;
+                height: 38px;
+                width: 25px;
+            }
+        }
+    }
+    figure {
+        @extend .d-none, .d-md-block;
+    }
+    img {
+        @extend .rounded-bottom;
+        margin-bottom: 10px;
+        height: 120px;
+        width: 160px;
+    }
+    li::before {
+        content: "-";
+        margin-right: 5px;
+    }
+    ul {
+        margin-bottom: 10px;
+    }
+    figcaption a {
+        @extend .link;
+    }
+    @include media-breakpoint-up(md) {
+        > div {
+            padding-top: 70px;
+            padding-bottom: 45px;
+        }
+        article {
+            width: 190px;
+        }
+        article > a {
+            border-bottom-left-radius: 0;
+            span {
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+}

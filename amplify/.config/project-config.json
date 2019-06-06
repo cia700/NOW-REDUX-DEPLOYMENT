@@ -1,0 +1,20 @@
+{
+    "projectName": "PAPSTOREFRONT",
+    "projectPath": "/Users/fmontada/Documents/git/prime/PAP-STORE-FRONT",
+    "defaultEditor": "sublime",
+    "frontendHandler": {
+        "javascript": "/usr/local/Cellar/node/10.9.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": ".",
+            "DistributionDir": "out",
+            "BuildCommand": "npm run build",
+            "StartCommand": "npm run start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/usr/local/Cellar/node/10.9.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}

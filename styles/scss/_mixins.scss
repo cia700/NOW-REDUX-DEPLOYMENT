@@ -1,0 +1,90 @@
+@mixin flex ($column: false, $horizontal: center, $vertical: center, $wrap: false){
+    display: flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+    
+    @if $column != false {
+        flex-direction: column;
+    } @else {
+        flex-direction: row;
+    }
+
+    @if $wrap != false {
+        flex-wrap: wrap;
+    } @else {
+        flex-wrap: nowrap;
+    }
+}
+
+@mixin font ($size, $weight: false, $style: false, $family: false){
+    font-size: $size;
+    @if $weight != false {
+        font-weight: $weight;
+    }
+    @if $style != false {
+        font-style: $style;
+    }
+    @if $family != false {
+        font-family: $family;
+    }
+}
+
+@mixin font($size, $weight: false, $family: false) {
+    font-size: $size;
+
+    @if $weight != false {
+        font-weight: $weight;
+    }
+
+    @if $family != false {
+        font-family: $family;
+    }
+}
+
+@mixin icon ($x: 0, $y: 0, $size: auto){
+    display: inline-block;
+    background: {
+        image: url('/static/images/sprite.svg');
+        position: $x $y;
+        repeat: no-repeat;
+        size: $size;
+    }
+}
+
+@mixin size($height, $width: false) {
+    height: $height;
+
+    @if $width == false {
+        width: $height;
+    } @else {
+        width: $width;
+    }
+}
+
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount; 
+    text-align: left;
+    //margin-right: -15px;
+    padding-right: 15px;
+
+    &:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: $bgColor;
+    }
+}

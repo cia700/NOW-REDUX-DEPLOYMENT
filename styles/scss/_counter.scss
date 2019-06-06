@@ -1,0 +1,55 @@
+.counter {
+    display: inline-block;
+    > button {
+        @extend .btn, .btn-info, .btn-block;
+        &.disabled {
+            background-color: silver;
+            border-color: silver;
+            cursor: default;
+        }
+    }
+    div {
+        @include flex($horizontal: space-between);
+
+        
+        button {
+            @extend .btn, .btn-light, .rounded-0, .p-0;
+            
+            @include font(20px,  bold);
+            @include size(38px, 30px);
+            
+            border: 1px solid silver;
+            min-width: 27px;
+            box-shadow: none!important;
+            
+            &:first-child {
+                @extend .rounded-left;
+
+                &::before {
+                    content: '–';
+                    padding-bottom: 5px;
+                    display: inline-block;
+                }
+            }
+            &:last-child {
+                @extend .rounded-right;
+                
+                &::before {
+                    content: '+';
+                }
+            }
+        }
+    }
+    input {
+        @extend .text-center, .bg-light, .rounded-0;
+        border-left: 0;
+        border-right: 0;
+        padding: 5px;
+        //width: calc(100% - 60px);
+        &.counter-readonly {
+            @extend .border, .rounded;
+            border: 1px solid hsl(0,0%,80%)!important;
+            width: 100%;
+        }
+    }
+}

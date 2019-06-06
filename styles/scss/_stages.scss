@@ -1,0 +1,67 @@
+.stages {
+    @extend .mx-auto;
+    @include flex($horizontal: space-around, $vertical: flex-start);
+
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 130px;
+    max-width: 239px;
+
+    .linked-step {
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            p {
+                // background-color: $lightgreen;
+
+                & ~ figcaption {
+                    color: $green;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    figure {
+        @include flex(true, flex-start);
+        z-index: 1;
+        width: 90px;
+    }
+
+    p {
+        @extend .text-center, .rounded-circle;
+        @include flex();
+        @include font(18px);
+        @include size(40px);
+
+        background-color: #ced4da;
+        margin-bottom: 8px;
+        color: white;
+        // transition: all .3s;
+
+        &.active-stage {
+            background-color: $green;
+
+            & ~ figcaption {
+                color: $green;
+            }
+        }
+    }
+
+    figcaption {
+        @extend .text-center;
+        @include font(14px);
+
+        color: silver;
+        // transition: all .3s;
+    }
+
+    hr {
+        background-color: $border-color;
+        margin: 0;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+    }
+}

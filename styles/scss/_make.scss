@@ -1,0 +1,48 @@
+.make {
+    @extend .container, .container-spacing;
+    h2 {
+        @extend .title;
+    }
+    article {
+        @extend .row;
+        > div {
+            @extend .col-lg-6;
+            &:last-child div {
+                @extend .justify-content-between;
+                @include flex(
+                    $horizontal: space-between,
+                    $vertical: flex-start,
+                    $wrap: true
+                );
+                height: calc(100% + 20px);
+                margin: -10px;
+            }
+        }
+    }
+    p {
+        margin-bottom: 25px;
+    }
+    ul {
+        @extend .list-columns;
+        margin-bottom: 25px;
+    }
+    a {
+        @extend .link;
+    }
+    figure {
+        @include flex(true, flex-start);
+        margin: 10px;
+    }
+    img {
+        @extend .rounded;
+        width: 120px;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        ul {
+            margin-bottom: 0;
+        }
+    }
+}

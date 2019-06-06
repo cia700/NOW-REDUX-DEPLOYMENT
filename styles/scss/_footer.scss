@@ -1,0 +1,229 @@
+footer {
+    color: white;
+    margin-top: auto;
+
+    .main {
+        background-color: #0a6769;
+        > div {
+            @extend .container;
+            @include flex(true);
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    }
+    img {
+        @extend .rounded;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    nav {
+        width: 100%;
+        div {
+            margin-bottom: 25px;
+        }
+        button {
+            @extend .btn, .btn-block, .btn-info;
+
+            &:not(.collapsed) {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+        a {
+            color: white;
+            display: block;
+            &:hover {
+                color: $extralightgreen;
+            }
+        }
+        li {
+            padding: 2px;
+        }
+        ul {
+            @extend .rounded-bottom;
+            background-color: $darkgreen;
+            padding: 10px;
+        }
+    }
+    .socials {
+        @include flex(true);
+        width: 100%;
+        h4 {
+            @include font(16px);
+            margin-bottom: 10px;
+        }
+        div {
+            @include flex($horizontal: flex-start);
+            margin-bottom: 25px;
+            input {
+                width: 300px;
+                margin-right: -4px;
+            }
+            button {
+                @extend .btn-info, .btn;
+
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+        ul {
+            @include flex($horizontal: space-between);
+            h4 {
+                margin: 0;
+                margin-right: auto;
+            }
+        }
+        div,
+        ul {
+            width: 290px;
+        }
+        li {
+            @extend .text-center, .rounded;
+
+            //background-color: white;
+            margin-left: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        a {
+            margin-top: 6px;
+            width: 17px;
+            height: 18px;
+        }
+        .icon-facebook {
+            @include icon(-291px, 0, 600px);
+        }
+        .icon-twitter {
+            @include icon(-306px, 1px, 600px);
+        }
+        .icon-pinterest {
+            @include icon(-323px, 0, 600px);
+        }
+        .icon-google {
+            @include icon(-342px, 0, 600px);
+        }
+        .icon-rss {
+            @include icon(-363px, 0, 600px);
+        }
+    }
+    .copyright {
+        background-color: $darkgreen;
+        > div {
+            @extend .container;
+        }
+        span {
+            color: #666 !important;
+        }
+        p {
+            @include font(12px);
+            padding-top: 10px;
+            text-align: center;
+        }
+        a {
+            margin-left: 2px;
+            color: #666 !important;
+            &:hover {
+                text-decoration: underline;
+                color: inherit;
+            }
+        }
+        ul {
+            text-align: center;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        li {
+            @extend .rounded;
+            height: 32px;
+            width: 48px;
+            &:not(:first-child) {
+                margin-left: 10px;
+            }
+        }
+        .icon-visa {
+            @include icon(-71px, 0, 1200px);
+        }
+        .icon-mastercard {
+            @include icon(-126px, 0, 1200px);
+        }
+        .icon-discover {
+            @include icon(-234px, 0, 1200px);
+        }
+        .icon-amex {
+            @include icon(-179px, 0, 1200px);
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        img {
+            height: 130px;
+            width: 170px;
+        }
+        nav {
+            @include flex($horizontal: space-between, $vertical: flex-start);
+            button {
+                background: transparent;
+                padding: 0;
+                border: 0;
+                margin-bottom: 12px;
+
+                &:focus {
+                    box-shadow: none;
+                }
+
+                line-height: 16px;
+                pointer-events: none;
+                text-align: left;
+            }
+            li {
+                padding: 0;
+            }
+            ul {
+                background: transparent;
+                padding: 0;
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .main > div {
+            @include flex(
+                $horizontal: flex-start,
+                $vertical: flex-start,
+                $wrap: true
+            );
+        }
+        nav {
+            max-width: 470px;
+            margin-left: auto;
+        }
+        .copyright {
+            > div {
+                @include flex($horizontal: space-between);
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                margin: 0;
+                height: 32px;
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .main > div {
+            @include flex($horizontal: space-between, $vertical: flex-start);
+        }
+        nav {
+            margin-left: 25px;
+            margin-right: 25px;
+            div {
+                margin-bottom: 0;
+            }
+        }
+        .socials {
+            width: 292px;
+        }
+    }
+}
