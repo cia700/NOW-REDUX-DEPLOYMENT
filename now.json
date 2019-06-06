@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "primeauto",
+    "name": "now-redux-deployment",
     "alias": ["www.myprimecarparts.com", "my-alias-fmontada"],
     "build": {
         "env": {
