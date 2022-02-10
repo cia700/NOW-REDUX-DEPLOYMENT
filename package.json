@@ -15,7 +15,7 @@
         "moment": "^2.24.0",
         "next": "^8.0.1",
         "next-redux-wrapper": "latest",
-        "node-sass": "4.9.3",
+        "node-sass": "7.0.0",
         "react": "^16.6.3",
         "react-async-script-loader": "^0.3.0",
         "react-dom": "^16.6.3",
